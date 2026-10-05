@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecondLife – Turn old electronics into cool builds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-pg="home">
+<nav><div class="wrap">
+  <a class="logo" href="#home"><span aria-hidden="true">♻️</span>SecondLife</a>
+  <div class="menu" id="menu"><a href="#home">Home</a><a href="#parts">My bag</a><a href="#projects">Builds</a><a href="#impact">Impact</a></div>
+</div></nav>
+
+<main class="wrap">
+<section class="page" id="home">
+  <div class="hero">
+    <span class="fl" style="--x:6%;--y:8%">🔋</span><span class="fl" style="--x:46%;--y:2%;animation-delay:-2s">⚡</span><span class="fl" style="--x:92%;--y:55%;animation-delay:-4s">🎧</span>
+    <div class="hl">
+      <span class="stk">No shopping needed</span>
+      <h1>Got old electronics? Turn them into cool builds.</h1>
+      <p>Tap the parts lying around your room. We show what you can build, what is missing, and how much e-waste you kept out of the bin.</p>
+      <a class="btn pri" href="#parts">Start tapping parts</a>
+      <button class="btn" id="sample">Load a sample bag</button>
+    </div>
+    <div class="demo" id="demo" data-n="0" style="--n:0">
+      <h3>Try it right here</h3>
+      <p>Tap the three parts to power up a night lamp.</p>
+      <div class="lamp" aria-hidden="true">💡</div>
+      <div class="dchips">
+        <button data-demo>☀️ Light sensor</button><button data-demo>🧠 Arduino</button><button data-demo>🔌 Wires</button>
+      </div>
+      <p class="dres" id="dres" aria-live="polite">0 of 3 parts in. Keep tapping!</p>
+    </div>
+  </div>
+  <div class="mq" id="mq"></div>
+  <div class="steps">
+    <div class="card c1"><span class="badge">1</span><h3>Grab your parts</h3><p>Tap parts to drop them in your bag. Watch them fly in.</p></div>
+    <div class="card c2"><span class="badge">2</span><h3>Match a build</h3><p>See which projects are ready, or just one part away.</p></div>
+    <div class="card c3"><span class="badge">3</span><h3>Build it, flex it</h3><p>Fill the slots, hit Build, and level up your eco rank.</p></div>
+  </div>
+  <div class="why">
+    <div class="card"><b>62 million tonnes</b><p>of e-waste was generated worldwide in 2022 (UN Global E-waste Monitor).</p></div>
+    <div class="card"><b>Under 25%</b><p>of that was documented as properly collected and recycled.</p></div>
+    <div class="card"><b>Reuse first</b><p>Keeping a part in use beats recycling it, and it costs nothing.</p></div>
+  </div>
+</section>
+
+<section class="page" id="parts">
+  <h2 class="t">My bag</h2>
+  <p class="sub">Tap a part to add one. Tap − on a card to remove one. Your bag is saved on this device.</p>
+  <div class="summary" id="psum"></div>
+  <div class="bar"><input class="search" id="q" type="search" placeholder="Search parts, e.g. motor" aria-label="Search parts"><button class="btn" id="sample2">Add sample bag</button><button class="btn" id="clear">Empty bag</button></div>
+  <div class="chips" id="cats"></div>
+  <div class="tiles" id="plist"></div>
+</section>
+
+<section class="page" id="projects">
+  <h2 class="t">Builds for you</h2>
+  <p class="sub">Closest builds come first. Tap one to fill its slots and build it.</p>
+  <div class="chips" id="pf"></div>
+  <div id="prj"></div>
+</section>
+
+<section class="page" id="impact">
+  <h2 class="t">Your impact</h2>
+  <p class="sub">Every finished build adds to your eco level.</p>
+  <div class="kpis" id="kpis"></div>
+  <div class="card"><h3>Finished builds</h3><div id="blt"></div></div>
+  <button class="btn pri" id="share" style="margin-top:16px">Copy my stats</button>
+  <p class="note">How we estimate: each part has an average weight. E-waste reused is the combined weight of the parts used in your built projects. CO₂ avoided uses a rough factor of 20 kg CO₂e per kg of electronics and is an estimate, not a measurement.</p>
+</section>
+</main>
+
+<div id="tray" aria-live="polite"></div>
+<dialog id="dlg" aria-labelledby="dt"><div class="dh"><h2 id="dt"></h2><p class="sub" id="dd" style="margin:4px 0 0"></p></div><div class="db" id="dbody"></div><div class="df" id="dfoot"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
