@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecondLife – Reuse your old electronics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#home"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#17794A"/><path d="M8 13a5 5 0 0 1 8.5-3.5M18 13a5 5 0 0 1-8.5 3.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M16.8 6.8v3h-3M9.2 19.2v-3h3" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>SecondLife</a>
+  <div class="menu" id="menu">
+    <a href="#home">Home</a><a href="#parts">My parts</a><a href="#projects">Projects</a><a href="#impact">Impact</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<section class="page" id="home">
+  <div class="hero">
+    <h1>Find out what you can build from electronics you already own.</h1>
+    <p>Tell us which spare components and old devices you have. SecondLife suggests projects you can build, shows what is still missing, and estimates the e-waste you keep out of landfill.</p>
+    <a class="btn pri" href="#parts">Add my parts</a>
+    <button class="btn" id="sample">Try with sample parts</button>
+  </div>
+  <div class="steps">
+    <div class="card"><span class="badge">1</span><h3>List your parts</h3><p>Search the catalogue and set how many of each part you have.</p></div>
+    <div class="card"><span class="badge">2</span><h3>See matching projects</h3><p>Each project shows a feasibility score and the exact parts you lack.</p></div>
+    <div class="card"><span class="badge">3</span><h3>Build and track impact</h3><p>Mark a project as built to see the e-waste and CO₂ you saved.</p></div>
+  </div>
+  <div class="why">
+    <div class="card"><b>62 million tonnes</b><p>of e-waste was generated worldwide in 2022 (UN Global E-waste Monitor).</p></div>
+    <div class="card"><b>Under 25%</b><p>of that was documented as properly collected and recycled.</p></div>
+    <div class="card"><b>Reuse first</b><p>Keeping a part in use is better than recycling it, and costs nothing.</p></div>
+  </div>
+</section>
+
+<section class="page" id="parts">
+  <h2 class="t">My parts</h2>
+  <p class="sub">Use + and − to set how many of each part you own. Your list is saved on this device.</p>
+  <div class="summary" id="psum"></div>
+  <div class="bar"><input class="search" id="q" type="search" placeholder="Search parts, e.g. motor" aria-label="Search parts"><button class="btn" id="sample2">Add sample parts</button><button class="btn" id="clear">Clear list</button></div>
+  <div class="chips" id="cats"></div>
+  <div class="list" id="plist"></div>
+</section>
+
+<section class="page" id="projects">
+  <h2 class="t">Projects you can build</h2>
+  <p class="sub">Sorted by how close you are. Select a project to see its parts list.</p>
+  <div class="chips" id="pf"></div>
+  <div id="prj"></div>
+</section>
+
+<section class="page" id="impact">
+  <h2 class="t">Your impact</h2>
+  <p class="sub">Totals update when you mark a project as built.</p>
+  <div class="kpis" id="kpis"></div>
+  <div class="card"><h3>Projects built</h3><div id="blt"></div></div>
+  <p class="note">How we estimate: each part has an average weight. E-waste reused is the combined weight of the parts used in your built projects. CO₂ avoided uses a rough factor of 20 kg CO₂e per kg of electronics and is an estimate, not a measurement.</p>
+</section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dt"><div class="dh"><h2 id="dt"></h2><p class="sub" id="dd" style="margin:4px 0 0"></p></div><div class="db" id="dbody"></div><div class="df" id="dfoot"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
